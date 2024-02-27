@@ -1,0 +1,17 @@
+﻿#calcWebPage{
+    width: 400px;
+    height: 350px;
+    border: 1px black;
+    margin: 15px auto;
+    border-radius: 20px;
+    background-color: lightgrey;
+}
+
+h2{
+    text-align: center;
+}
+
+table{
+    column-count: 3;
+
+}

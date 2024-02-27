@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Assignment5.MasterPages.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Kaden ITM 325 Web Site</title>
+    <link href="../Styles/Main.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .dropdownContent {
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 5px 5px 15px #333333;
+            min-width: 100px;
+            display:none;
+
+        }
+
+        #Banner nav li.dropdown{
+            display:inline-block;
+        }
+
+        #Banner nav .dropdownContent .LinkButtonClass{
+            display:block;
+            color: black;
+        }
+
+        .dropdown:hover .dropdownContent{
+            display:block;
+        }
+
+        .dropdown:hover .dropbtn{
+            background-color: #072C66
+        }
+
+        #Banner nav .dropdownContent .LinkButtonClass:hover{
+            background-color: #e1e1e1;
+        }
+
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="WebPage">
+            <header id="Banner">
+
+                <a id="Zelda" href="#">
+                    <img src="../Images/ZeldaOOT.jpg" alt="ZeldaOOT" />
+                </a>
+                <a id="Steam" href="#">
+                    <img src="../Images/Steam.png" alt="Steam" />
+                </a>
+
+                <h1>My ITM 325 Web Site</h1>
+                <nav>
+
+                    <ul>
+                        <li><a href="Home.aspx">Home</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="CalculatorApp.aspx">Calculator</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Font Size</a>
+                            <div class="dropdownContent">
+                                <asp:LinkButton ID="LinkButton14px" runat="server"  Text="14px" CssClass="LinkButtonClass" OnClick="LinkButton14px_Click" />
+                                <asp:LinkButton ID="LinkButton16px" runat="server" Text="16px" CssClass="LinkButtonClass" OnClick="LinkButton16px_Click" />
+                                <asp:LinkButton ID="LinkButton18px" runat="server" Text="18px" CssClass="LinkButtonClass" OnClick="LinkButton18px_Click" />
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+            </header>
+
+            <div id="Wrapper">
+                <aside id="Links">
+                    <h2>Side Links</h2>
+
+                    <ul>
+                        <li><a href="htmlpage.html">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 5</a></li>
+                    </ul>
+                </aside>
+
+                <section id="Posts">
+                    <asp:ContentPlaceHolder ID="Articles" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+
+            </div>
+
+            <footer id="Footer">
+                <div id="OnePiece">
+                    <a href="#">
+                        <img src="../Images/onePiece.jpg" alt="One Piece" />
+                    </a>
+                </div>
+                <div id="Nier">
+                    <a href="#">
+                        <img src="../Images/Nier.jpg" alt="Nier Automata" />
+                    </a>
+                </div>
+
+                <p>&copy; Copyright 2023 Kaden Vissotski and BSU</p>
+
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
